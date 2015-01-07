@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Tester votre newsletter vers vos principaux clients mail</title>
+	<link rel="stylesheet" href="raphaelicons.css" type="text/css">
+	<link rel="stylesheet" href="formMail2.css" type="text/css" />
+	
+	<script type="text/javascript">
+	var carMax = 60;
+	function verifLongTxt(){
+		var txt = document.formMail.objet.value;
+		if(txt.length > carMax){
+			document.formMail.objet.value = txt.substring(0, carMax);
+			txt = document.formMail.objet.value;
+		}
+		document.formMail.carMax.value = carMax-txt.length;//txt.length;//pour décompter
+		//document.writeln('<span>'+txt+'</span>');
+		setTimeout('verifLongTxt()', 100);
+	
+	}
+	</script>
+</head>
+<body>
+  <div id="content" class="whiteShad">
+	 <!-- début formulaire de contact -->
+      <form id="contact" action="fctMail2.php" method="post" enctype="multipart/form-data" name="formMail" target="_self" >
+		<h2><span class="icon rge ">a </span>Envoyer votre code source au format html <span class="rge">*</span> <span class="rge small"> images en lien absolu</span></h2>
+		
+		
+        <fieldset for="message" id="message">
+		<label for="deMail">de :</label>
+		<input type="text" name="deMail" /><span class="icon ">L</span><br/>
+		<label for="adMail">à :</label>
+		<input type="text" name="adMail" /><span class="icon ">M</span><br/>
+		<label for="objet">objet :</label>
+		<input type="text" name="objet" /><span class="icon ">O</span>
+        </fieldset>
+		
+		<fieldset id="nbCarObj">
+		<label for="">Caractères réstant :</label>
+		<input type="text" disabled name="carMax" style="width:30px;" /><label for=""> sur 60</label>
+		</fieldset>
+		
+		<fieldset id="zoneSaisie">
+			<label style="display:block;">Code source<span class="rge">*</span> :</label>
+			<div id="textAera">
+			<textarea id="newsCode" name="message" cols="110" rows="10" placeholder="vérifier les liens de vos images ex : src='http://www.hostname.fr/dossierImg/monImage.png'">
+			</textarea><div class="sh_bottom"></div>
+			</div><!-- div pour inclure l'ombre oblongue css3 -->
+		</fieldset>
+		<div id="btnSuppEnv">
+			<fieldset style="float:left;">
+				<label class="icon resetBtn">Â</label>
+				<input type="reset" name="Submit" value="Supprimer" class="btn" />
+			</fieldset style="float:left;">
+			<fieldset style="float:left;">
+				<label class="icon submitBtn">v</label>
+				<input type="submit" name="Submit" value="Envoyer" class="btn" />
+			</fieldset>
+			<fieldset style="float:left;">
+				<label class="icon submitBtn">F</label>
+				<input type="button" id="btnRendu" name="Rendu" value="Rendu" class="btn" onclick="window.open('rendu.html','RenduHtml','width=680,height=1500,toolbar=no,scrollbars=yes,location=no').moveTo(0,0)" />
+			</fieldset>
+		</div>
+	</form>
+	<script type="text/javascript">
+	verifLongTxt();
+	</script>
+      <!-- fin formulaire de contact -->
+	  <br class="clear"/>
+	<table cellspacing="0" cellpadding="0" style="float:left;">
+		<caption class="rge small ">Windows fonts / Mac fonts / <em>Font family</em></caption>
+		<tr>
+		  <td style="font-family: Arial;">Arial</td>
+		  <td style="font-family: Helvetica;">Helvetica</td>
+		  <td style="font-family: Verdana;">Verdana</td>
+		  <td style="font-family: 'MS Sans Serif';">MS Sans Serif</td>
+		</tr>
+		<tr>
+		  <td style="font-family: Geneva;">Geneva</td>
+		  <td style="font-family: Gadget;">Gadget</td>
+		  <td style="font-family: 'New York';">New York</td>
+		  <td style="font-family: 'Book Antiqua';">Book Antiqua</td>
+		</tr>
+		<tr>
+		  <td style="font-family: 'Comic Sans MS';">Comic Sans MS</td>
+		  <td style="font-family: 'Trebuchet MS';">Trebuchet MS</td>
+		  <td style="font-family: Impact;">Impact</td>
+		  <td style="font-family: Tahoma;">Tahoma</td>
+		</tr>
+		<tr>
+		  <td style="font-family: Courier;">Courier</td>
+		  <td style="font-family: 'Courier New';">Courier New</td>
+		  <td style="font-family: Monaco;">Monaco</td>
+		  <td style="font-family: monospace;">monospace</td>
+		  
+		</tr>
+		<tr>
+		  <td style="font-family: Georgia, 'Times New Roman', Times, serif">Georgia</em></td>
+		  <td style="font-family: Charcoal">Charcoal</td>
+		  <td style="font-family: Textile;">Textile</td>
+		  <td style="font-family: Geneva;">Geneva</td>
+		</tr>
+		<tr>
+		  <td style="font-family: 'Lucida Console';">Lucida Console</td>
+		  <td style="font-family: 'Lucida Sans Unicode';">Lucida Sans Unicode</td>
+		  <td style="font-family: 'Lucida Grande';">Lucida Grande</td>
+		  <td style="font-family: Lucida;">Lucida</td>
+		  
+		</tr>
+		<tr>
+		  <td style="font-family: 'Palatino Linotype';">Palatino Linotype</td>
+		  <td style="font-family: Palatino;">Palatino</td>
+		  <td style="font-family: Times">Times</td>
+		  <td style="font-family: 'Times New Roman'">Times New Roman</td>
+		  
+		</tr>
+		<tr>
+		  <td style="font-family: Symbol;">Symbol</td>
+		  <td style="font-family: Webdings">Webdings</td>
+		  <td style="font-family: Wingdings;">Wingdings</td>
+		  <td style="font-family: 'Zapf Dingbats';">Zapf Dingbats</td>
+		</tr>
+		<tr>
+		  <td style="font-family: Symbol;text-decoration:line-through;" colspan="2">Style : text-decoration: line-through</td>
+		  <td colspan="2">...</td>
+		</tr>
+	</table>
+  <br class="clear"/>
+  </div><!-- FIN de div#content -->
+
+</body>
+</html>

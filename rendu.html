@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Rendu & Vérification HTML</title>
+	<script type="text/javascript">
+	//recuperation du code html depuis la fenetre mère
+	var newsRender = opener.document.getElementById("newsCode").value;
+	document.write(newsRender);
+	</script>
+</head>
+<body>
+<style type="text/css">
+@font-face {font-family:
+    'RaphaelIcons';
+    src:
+    url('fonts/raphaelicons-webfont.eot');
+    src:
+    local('?'), url('fonts/raphaelicons-webfont.woff') format('woff'), url('fonts/raphaelicons-webfont.ttf') format('truetype'), url('fonts/raphaelicons-webfont.svgwebfontKOf9F4sx') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    font-weight: normal;
+    font-style: normal;
+    line-height: normal;
+    font-family: 'RaphaelIcons';
+    font-size: 1.1em;/*2*/
+    position: relative;
+    top: 0.1em;
+}
+.errorStyle {
+position: absolute;
+display: block;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.18);
+padding: 2px;
+border-top:0;border: 1px solid #FFFFFF;
+font-weight: bolder;color:#FF0F67;font-family: arial;
+text-shadow: 1px 1px 1px #FFFFFF;
+background-color: rgba(250, 250, 250, 0.55);
+}
+.commentError{
+	font-size: 10px;
+	background-color: rgba(220,220,220,0.8);
+	padding: 2px;
+}
+</style>
+<script type="text/javascript">
+//fct raccourci select id
+/*function $(id){
+	 return document.getElementById(id);//
+}*/
+var imgs = document.images;
+
+for(i=0; i<imgs.length;i++){
+	//afficher les style html border
+	//console.log(imgs[i].border);
+	//afficher le type d'affichage
+	//console.log(imgs[i].style.display);
+	
+	if(imgs[i].style.display != 'block'){//||imgs[i].style.display ==""
+		//entoure l'image
+		imgs[i].style.border = '1px solid #FF0F67';
+		var imgId = imgs[i].id;
+		document.getElementById(imgId).parentNode.innerHTML += '<span class="errorStyle">'+'<span class="icon">8</span>'+' img'+(i+1)+'&nbsp;#'+imgId+' '+'<span class="commentError">'+imgs[i].style.display+'&nbsp;border'+imgs[i].border+'</span>'+'</span>';//top:0;left:0;rose:255, 15, 103
+	};
+};
+//alert(imgs[1].style.display);
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title></title>
+</head>
+<body>
+	 <!-- début formulaire de contact -->
+      <form id="contact" action="fctEnvoi.php" method="post" enctype="multipart/form-data" name="post" target="_self" >
+		<h2>Envoyer un message<span class="rge">*</span></h2><!-- ancien name=" formulaire-->
+        <fieldset>
+		<label for="objet">Objet de votre message :</label>
+		<input type="text" name="objet" id="objet" placeholder="Objet de votre message"  />
+		</fieldset>
+		<fieldset>
+		<label for="nom">Votre nom :</label>
+		<input type="text" name="nom" id="nom" placeholder="Votre nom" />
+		</fieldset>
+		<fieldset for="cp">
+		<label>Votre code postal :</label>
+		<input type="text" name="cp" id="cp" placeholder="Votre code postal" />
+		</fieldset>
+        <fieldset  for="mail">
+		<label>Votre adresse email :</label>
+		<input type="text" name="mail" id="mail" placeholder="Votre mail" />
+		</fieldset>
+        
+        <fieldset for="message" id="message">
+		<label>Votre message :</label>
+        <textarea name="message" cols="50" rows="10"></textarea>
+		<br/>
+		<input type="reset" name="Submit" value="Supprimer" class="btn_panier_pckSect1" />
+		<input type="submit" name="Submit" value="Envoyer" class="btn_panier_pckSect1" />
+        </fieldset>
+	</form>
+      <!-- fin formulaire de contact -->
+</body>
+</html>
